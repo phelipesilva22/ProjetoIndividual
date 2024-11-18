@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orquestra CCB</title>
+    <link rel="stylesheet" href="../public/css/orq.css">
+    <link rel="shortcut icon" href="../site/public/assets/favicon/image.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Orquestra CCB</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#historia">História da Orquestra</a></li>
+                <li><a href="#instrumentos">Instrumentos na Orquestra</a></li>
+                <li><a href="#hinario">Evolução do Hinário</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="btn login-btn" onclick="window.location.href='login.html'">Login</button>
+                <button class="btn signup-btn" onclick="window.location.href='cadastro.html'"> Cadastro</button>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                ☰
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Home Section -->
+    <section id="home" class="section-home">
+        <div class="msg">
+            <h1>Orquestra CCB</h1>
+            <p>"Louvai ao Senhor! Cantai ao Senhor um cântico novo, e o seu louvor na congregação dos santos." - Salmos 149:1</p>
+        </div>
+    </section>
+
+    <!-- Sobre Mim Section -->
+    <section id="sobre" class="section">
+        <div class="content">
+            <img src="sua-foto.jpg" alt="Foto de Phelipe">
+            <div class="text">
+                <h2>Sobre Mim</h2>
+                <p>Meu nome é Phelipe Bruione. Desde criança, sempre admirei a orquestra da Congregação Cristã no Brasil. Fazer parte deste conjunto musical foi um sonho realizado, trazendo inúmeros benefícios tanto espirituais quanto pessoais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- História da Orquestra Section -->
+    <section id="historia" class="section">
+        <div class="content">
+            <img src="historia.jpg" alt="História da Orquestra">
+            <div class="text">
+                <h2>História da Orquestra</h2>
+                <p>A orquestra da CCB teve início em 1932 após uma reunião convocada pelo fundador Louis Francescon, com o objetivo de incluir um conjunto musical para auxiliar a irmandade nos cantos dos hinos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instrumentos Section -->
+    <section id="instrumentos" class="section-instrumentos">
+        <h2>Instrumentos na Orquestra</h2>
+        <div class="instrument-grid">
+            <div class="instrument">
+                <img src="cordas.jpg" alt="Cordas">
+                <h3>Cordas</h3>
+                <p>Violino, viola, violoncelo, contrabaixo.</p>
+            </div>
+            <div class="instrument">
+                <img src="madeiras.jpg" alt="Madeiras">
+                <h3>Madeiras</h3>
+                <p>Flauta, clarinete, fagote, oboé.</p>
+            </div>
+            <div class="instrument">
+                <img src="metais.jpg" alt="Metais">
+                <h3>Metais</h3>
+                <p>Trompete, trombone, tuba, trompa.</p>
+            </div>
+            <div class="instrument">
+                <img src="orgao.jpg" alt="Órgão Eletrônico">
+                <h3>Órgão Eletrônico</h3>
+                <p>Executado exclusivamente pelas irmãs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hinário Section -->
+    <section id="hinario" class="section-hinario">
+        <h2>Evolução do Hinário</h2>
+        <div class="linha">
+            <div class="timeline">
+                <div class="timeline-item">1930 - Hinário inicial com 150 hinos.</div>
+                <div class="timeline-item">1950 - Revisão e adição de novos hinos.</div>
+                <div class="timeline-item">1970 - Introdução de hinos em novas tonalidades.</div>
+                <div class="timeline-item">2000 - Nova revisão com hinos atualizados.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Site desenvolvido por Phelipe Bruione - 2024</p>
+    </footer>
+
+    <!-- Adicione este código ao final do seu arquivo HTML -->
+    <script>
+    const navLinks = document.querySelector('.nav-links');
+    function toggleMenu() {
+        navLinks.classList.toggle('show');
+    }
+    </script>
+
+</body>
+</html>
