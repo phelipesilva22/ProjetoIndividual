@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
+/*Estilização corpo da página*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background-color: #f5f5f5;
     color: #1c1919;
 }
 
+
+/*Estilização header*/
 header {
     background-color: #003366;
     padding: 15px;
@@ -51,7 +54,7 @@ header {
     transform: scale(1.07);
 }
 
-/* Auth Buttons */
+/* Estilização botões */
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -79,7 +82,10 @@ header {
     opacity: 0.9;
     transform: scale(1.05);
 }
+/*Fim da estilização botões e navbar*/
 
+
+/*Estilização da home*/
 .section-home {
     padding: 80px 20px;
     margin-top: 60px;
@@ -89,7 +95,9 @@ header {
     background-position: center;
     width: 100%;
     height: 900px;
-    color: #ffffff;
+    color:  #ffffff;
+    font-size: 40px;
+    padding-top: 5px;
 }
 
 .section-home .msg{
@@ -101,51 +109,120 @@ header {
 
 .section-home h1{
     font-size: 60px;
-   
 }
 
 .section-home p{
     font-size: 35px;
 }
+/*Fim da estilização da home*/
 
 
-.section {
-    padding: 80px 20px;
-    margin-top: 60px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.section img {
-    width: 200px;
-    height: auto;
-    margin: 20px;
-}
-
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+/*Estilização da seção sobre mim*/
+.sobre-mim {
+    padding: 50px 30px;
     background-color: #94c9c6;
+}
+
+.sobre-mim h2 {
+    text-align: center;
+    color: #ffff;
+    font-size: 4rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
+}
+
+.sobre-mim-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sobre-mim-texto {
+    flex: 1;
+    max-width: 575px;
+    text-align: justify;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.sobre-mim-texto p {
+    padding-right: 5%;
+    margin-right: 10%;
+}
+
+.sobre-mim-imagem {
+    flex: 1;
+    max-width: 450px;
+    text-align: center;
+}
+
+.sobre-mim-imagem img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    width: 50%;
-    height: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/*Fim da estilização do sobre mim*/
+
+
+/*Estilização da história*/
+.historia {
+    padding: 50px 30px;
+    background-color: #94c9c6;
 }
 
-.text {
-    max-width: 500px;
-    margin: 20px;
+.historia h2 {
+    text-align: center;
+    color: #ffff;
+    font-size: 4rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
 }
 
+.historia-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.historia-texto {
+    flex: 1;
+    max-width: 575px;
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.historia-texto p {
+    padding-left: 10%;
+    margin-left: 5%;
+}
+
+.historia-imagem {
+    flex: 1;
+    max-width: 650px;
+    text-align: center;
+}
+
+.historia-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*Estilização seção instrumentos*/
 .section-instrumentos h2{
     text-align: center;
 }
 
 .section-hinario h2{
-    text-align: center;
+    text-align: center;    
 }
 
 
