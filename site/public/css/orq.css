@@ -145,6 +145,7 @@ header {
     text-align: justify;
     font-size: 1.5rem;
     line-height: 1.6;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .sobre-mim-texto p {
@@ -195,6 +196,7 @@ header {
     text-align: left;
     font-size: 1.5rem;
     line-height: 1.6;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .historia-texto p {
@@ -217,7 +219,7 @@ header {
 
 
 /*Estilização seção instrumentos*/
-.section-instrumentos h2{
+/* .section-instrumentos h2{
     text-align: center;
 }
 
@@ -230,13 +232,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     gap: 20px;
-    margin: 20px;
+    margin: 20px; 
 }
-
-.instrument {
+ .instrument {
     background-color: #94c9c6;
     padding: 15px;
     border-radius: 8px;
@@ -246,6 +247,11 @@ header {
 .instrument img{
     height: 150px;
 }
+ */
+
+ 
+/*Projeto*/
+
 
 .linha{
     display: flex;
@@ -328,3 +334,6 @@ footer {
         display: block;
     }
 }
+
+
+

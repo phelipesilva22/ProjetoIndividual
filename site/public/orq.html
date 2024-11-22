@@ -14,7 +14,7 @@
             <div class="logo">Orquestra CCB</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#sobre-mim">Sobre Mim</a></li>
                 <li><a href="#historia">História da Orquestra</a></li>
                 <li><a href="#instrumentos">Instrumentos na Orquestra</a></li>
                 <li><a href="#hinario">Evolução do Hinário</a></li>
@@ -28,8 +28,6 @@
             </div>
         </nav>
     </header>
-
-
 
     <!-- Home Section -->
     <section id="home" class="section-home">
@@ -72,34 +70,19 @@
             </div>
         </div>
     </section>
+    
+
+
+
+
 
     
-    <!-- Instrumentos Section -->
-    <section id="instrumentos" class="section-instrumentos">
-        <h2>Instrumentos na Orquestra</h2>
-        <div class="instrument-grid">
-            <div class="instrument">
-                <img src="../public/assets/imgs/viola.png" alt="Cordas">
-                <h3>Cordas</h3>
-                <p>Violino, viola, violoncelo, contrabaixo.</p>
-            </div>
-            <div class="instrument">
-                <img src="../public/assets/imgs/oboedamore.png" alt="Madeiras">
-                <h3>Madeiras</h3>
-                <p>Flauta, clarinete, fagote, oboé.</p>
-            </div>
-            <div class="instrument">
-                <img src="metais.jpg" alt="Metais">
-                <h3>Metais</h3>
-                <p>Trompete, trombone, tuba, trompa.</p>
-            </div>
-            <div class="instrument">
-                <img src="orgao.jpg" alt="Órgão Eletrônico">
-                <h3>Órgão Eletrônico</h3>
-                <p>Executado exclusivamente pelas irmãs.</p>
-            </div>
-        </div>
-    </section>
+
+
+
+
+ 
+
 
     <!-- Hinário Section -->
     <section id="hinario" class="section-hinario">
@@ -127,5 +110,61 @@
     }
     </script>
 
+    <script src="../public/js/index.js"></script>
 </body>
 </html>
+
+
+   
+    <section id="instrumentos">
+        <h2>Instrumentos na Orquestra</h2>
+        <div class="carrossel-container">
+            <button class="prev" onclick="slideAnterior()">❮</button>
+            <div class="carrossel">
+                <div class="slide">
+                    <img src="violino.jpg" alt="Violino">
+                    <p>Violino - Um dos principais instrumentos de cordas.</p>
+                </div>
+                <div class="slide">
+                    <img src="viola.jpg" alt="Viola">
+                    <p>Viola de Arco - Similar ao violino, mas com timbre mais grave.</p>
+                </div>
+                <div class="slide">
+                    <img src="flauta.jpg" alt="Flauta">
+                    <p>Flauta - Instrumento de sopro com som doce e melodioso.</p>
+                </div>
+                <div class="slide">
+                    <img src="trompete.jpg" alt="Trompete">
+                    <p>Trompete - Versátil e de som marcante.</p>
+                </div>
+            </div>
+            <button class="next" onclick="slideProximo()">❯</button>
+        </div>
+    </section>
+    
+    <!-- Instrumentos Section -->
+    <!-- <section id="instrumentos" class="section-instrumentos">
+        <h2>Instrumentos na Orquestra</h2>
+        <div class="instrument-grid">
+            <div class="instrument">
+                <img src="../public/assets/imgs/viola.png" alt="Cordas">
+                <h3>Cordas</h3>
+                <p>Violino, viola, violoncelo, contrabaixo.</p>
+            </div>
+            <div class="instrument">
+                <img src="../public/assets/imgs/oboedamore.png" alt="Madeiras">
+                <h3>Madeiras</h3>
+                <p>Flauta, clarinete, fagote, oboé.</p>
+            </div>
+            <div class="instrument">
+                <img src="metais.jpg" alt="Metais">
+                <h3>Metais</h3>
+                <p>Trompete, trombone, tuba, trompa.</p>
+            </div>
+            <div class="instrument">
+                <img src="orgao.jpg" alt="Órgão Eletrônico">
+                <h3>Órgão Eletrônico</h3>
+                <p>Executado exclusivamente pelas irmãs.</p>
+            </div>
+        </div>
+    </section> -->
