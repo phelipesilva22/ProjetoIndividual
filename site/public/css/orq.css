@@ -245,7 +245,7 @@ header {
 }
 
 .container-cordas .titulo-categoria{
-    font-size: 2rem; 
+    font-size: 4rem; 
     color: #a95e13; 
     text-shadow: 1px 1px 1px black; 
     margin-bottom: 20px; 
@@ -254,7 +254,7 @@ header {
 
 
 .container-madeiras .titulo-categoria{
-    font-size: 2rem; 
+    font-size: 4rem; 
     color: #d2bdbd;
     text-shadow: 1px 1px 1px black; 
     margin-bottom: 20px; 
@@ -262,7 +262,7 @@ header {
 }
 
 .container-metais .titulo-categoria{
-    font-size: 2rem; 
+    font-size: 4rem; 
     color: #ffff00;
     text-shadow: 1px 1px 1px black; 
     margin-bottom: 20px; 
@@ -532,21 +532,50 @@ header {
 
 
 /*Estilização linha hinário*/
+.section-hinario{
+    display: flex; 
+    justify-content: space-between; 
+    gap: 40px; 
+    width: 100%; 
+    padding: 10px;
+    height: 1000px;
+    max-height: 1200px;
+}
+
+
 .linha{
+    width: 100%; 
+    position: relative;
     display: flex;
-    width: 700px;
     justify-content: center;
     align-items: center;
-
-    gap: 10px;
-    margin: 20px;
-
+    flex-direction: column;
 }
+
+.linha .titulo-hinario{
+    font-size: 4rem; 
+    color: #a95e13; 
+    text-shadow: 1px 1px 1px black; 
+    margin-bottom: 100px; 
+    text-align: center; 
+    margin-top: 10px;
+}
+
+.linha .hinarios{
+    font-size: 2rem; 
+    color: #a95e13; 
+    text-shadow: 1px 1px 1px black; 
+    margin-bottom: 5px; 
+    text-align: center; 
+    margin-top: 10px;
+}
+
+
 
 .timeline {
     display: flex;
     text-align: center;
-    gap: 15px;
+    gap: 30px;
    width: 100%;
    border-radius: 10px;
    justify-content: center;
@@ -555,10 +584,52 @@ header {
 }
 
 .timeline-item {
-    background-color: #0073e6;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     padding: 10px;
-    border-radius: 5px;
+    border-radius:10px;
+    max-width: 500px;
+    margin: 0 5px;
+    transition: 0.5s ease;
+    border: 1px solid transparent;
+}
+
+.timeline-item:hover {
+    border-color: 1px solid #a95e13;
+    background-color: #0073e6;
+    transform: scale(1.04);
+    
+
+}
+
+.timeline-item p{
+    font-size: 22px;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 500;
+}
+
+.timeline-item .img-hin-1{
+    width: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.timeline-item .img-hin-2{
+    width: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    
+}
+
+.timeline-item .img-hin-3{
+    width: 171px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.timeline-item .img-hin-4{
+    width: 200px;
+    object-fit: contain;
 }
 
 footer {
