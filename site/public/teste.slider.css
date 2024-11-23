@@ -33,6 +33,7 @@ body{
     flex-direction: column;
 }
 
+
 .container-cordas .titulo-categoria{
     font-size: 2rem; 
     color: #a95e13; 
@@ -57,8 +58,6 @@ body{
     margin-bottom: 20px; 
     text-align: center; 
 }
-
-
 
 
 .card-cordas, .card-madeiras, .card-metais {
@@ -197,14 +196,17 @@ body{
 
 .lista .item-lista-cordas .link:hover {
     border-color: #a95e13;
+    transform: scale(1.04);
 }
 
 .lista .item-lista-madeiras .link:hover {
     border-color: #151212;
+    transform: scale(1.04);
 }
 
 .lista .item-lista-metais .link:hover {
     border-color: #ffff00;
+    transform: scale(1.04);
 }
 
 .lista .link .img{
@@ -315,4 +317,90 @@ body{
 .lista .link:hover .botao-seta-metais{
     color: #fff;
     background: #ffff00;
+}
+
+
+
+/*Estilização linha hinário*/
+.section-hinario{
+    display: flex; 
+    justify-content: space-between; 
+    gap: 40px; 
+    width: 100%; 
+    padding: 10px;
+}
+
+
+.linha{
+    width: 100%; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.linha h2{
+    font-size: 2rem; 
+    color: #a95e13; 
+    text-shadow: 1px 1px 1px black; 
+    margin-bottom: 5px; 
+    text-align: center; 
+}
+
+
+.timeline {
+    display: flex;
+    text-align: center;
+    gap: 30px;
+   width: 100%;
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+   height: 500px;
+}
+
+.timeline-item {
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius:10px;
+    max-width: 500px;
+    margin: 0 5px;
+    transition: 0.5s ease;
+}
+
+.timeline-item:hover {
+    border-color: 1px solid #a95e13;
+    background-color: #0073e6;
+    transform: scale(1.05);
+
+}
+
+
+.timeline-item p{
+    font-size: 22px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.timeline-item .img-hin-1{
+    width: 200px;
+    object-fit: contain;
+}
+
+.timeline-item .img-hin-2{
+    width: 150px;
+    object-fit: contain;
+    
+}
+
+.timeline-item .img-hin-3{
+    width: 171px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.timeline-item .img-hin-4{
+    width: 200px;
+    object-fit: contain;
 }
