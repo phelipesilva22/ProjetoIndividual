@@ -5,10 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider Teste</title>
     <link rel="stylesheet" href="teste.slider.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"/>
+    
 </head>
 <body>
     
-    
+    <div class="container">
+        <h2>Cordas</h2>
+        <button class="slider-btn prev-btn"><</button>
+        <div class="card-cordas">
+            <ul class="lista">
+                <!--Card Violino -->
+                <li class="item-lista active">
+                    <a href="#" class="link">
+                        <img src="../public/assets/imgs/cordas/image.png" alt="Foto do Violino" class="img">
+                        <p class="texto violino">Violino</p>
+                        <h2 class="titulo">O menor e mais agudo dos instrumentos de cordas. Com sua sonoridade brilhante, é essencial para liderar as melodias e enriquecer os arranjos dos hinos.<br>
+                        Voz Principal: Soprano e Soprano 8ª acima</h2>
+                        <button class="botao-seta-frente material-symbols-rounded">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+
+                <!--Card Viola -->
+                <li class="item-lista">
+                    <a href="#" class="link">
+                        <img src="../public/assets/imgs/cordas/viola.png" alt="Foto do Viola" class="img">
+                        <p class="texto viola">Viola</p>
+                        <h2 class="titulo">Parecida com o violino, mas com um som mais grave e encorpado, complementando a harmonia com suavidade.<br>
+                        Voz Principal: Tenor.</h2>
+                        <button class="botao-seta-frente material-symbols-rounded">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+
+                <!--Card Cello -->
+                <li class="item-lista">
+                    <a href="#" class="link">
+                        <img src="../public/assets/imgs/cordas/cello.png" alt="Foto do cello" class="img">
+                        <p class="texto cello">Violoncello</p>
+                        <h2 class="titulo">Conhecido por seu tom profundo e emotivo, o cello adiciona riqueza e profundidade às músicas, trazendo uma base melódica marcante.<br>
+                        Voz principal: Baixo.</h2>
+                        <button class="botao-seta-frente material-symbols-rounded" onclick="fazerTransição()">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="slider-btn next-btn">></button>
+    </div>
     
     <script src="testeSlider.js"></script>
 </body>

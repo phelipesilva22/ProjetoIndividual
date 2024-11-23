@@ -1,20 +1,33 @@
-const carrossel = document.querySelector(".carrossel");
-const slides = document.querySelectorAll(".slide");
-let slideIndex = 0;
+const items = document.querySelectorAll('.item-lista'); // Todos os itens
+const nextBtn = document.querySelector('.next-btn'); // Botão próximo
+const prevBtn = document.querySelector('.prev-btn'); // Botão anterior
 
-// Função para atualizar a posição do carrossel
-function atualizarCarrossel() {
-    carrossel.style.transform = `translateX(-${slideIndex * 100}%)`;
+let currentIndex = 0; // Índice do item atual
+
+// Função para atualizar o item ativo
+function updateActiveItem(index) {
+    items.forEach((item, i) => {
+        item.classList.remove('active'); // Remove a classe `active` de todos os itens
+        if (i === index) {
+            item.classList.add('active'); // Adiciona `active` ao item atual
+        }
+    });
 }
 
-// Função para voltar ao slide anterior
-function slideAnterior() {
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length; // Volta ao último slide se estiver no primeiro
-    atualizarCarrossel();
-}
+// Botão "Próximo"
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length; // Avança para o próximo item (loop infinito)
+    updateActiveItem(currentIndex);
+});
 
-// Função para ir ao próximo slide
-function slideProximo() {
-    slideIndex = (slideIndex + 1) % slides.length; // Vai para o primeiro slide se estiver no último
-    atualizarCarrossel();
-}
+// Botão "Anterior"
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length; // Volta para o item anterior (loop infinito)
+    updateActiveItem(currentIndex);
+});
+
+
+
+
+
+

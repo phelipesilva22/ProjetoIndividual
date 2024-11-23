@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#7f8dd8, #CED6FB);
+}
+
+.container{
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 60px;
+    color: #a95e13;
+    text-shadow: 1px 1px 1px black;
+}
+
+.card-cordas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.lista {
+    display: flex;
+    gap: 30px; 
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #a95e13;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 5px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+.lista .item-lista {
+    display: none; 
+}
+
+.lista .item-lista.active {
+    display: block; 
+}
+
+.lista.show-all .item-lista {
+    display: block; 
+}
+
+
+
+.lista .item-lista{
+    list-style: none;
+}
+
+.lista .item-lista .link{
+    width: 400px;
+    display: block;
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.lista .item-lista .link:hover {
+    border-color: #a95e13;
+}
+
+
+.lista .link .img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-left: 70px;
+    object-fit: contain;
+    border-radius: 10px;    
+}
+
+
+.lista .link .texto{
+    color: #a95e13;
+    padding: 8px 16px;
+    font-size: 2.0rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+ 
+    width: fit-content;
+    border-radius: 12px;
+    margin: auto;
+    padding-top: 2%;
+    margin-top: 2%;
+}
+
+.lista .link .titulo{
+    font-size: 1.19rem;
+    color: #000;
+    font-weight: 600px;
+    padding-top: 5%;
+    text-align: center;
+}
+
+.lista .link .botao-seta-frente{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    color: #a95e13;
+    background: none;
+    cursor: pointer;
+    margin: 30px 0px 5px;
+    border: 2px solid #a95e13;
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+}
+
+.lista .link:hover .botao-seta-frente{
+    color: #fff;
+    background: #a95e13;
+}
