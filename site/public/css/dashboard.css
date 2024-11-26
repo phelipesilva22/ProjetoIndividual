@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.dashboard-header {
+    text-align: center;
+    background-color: #283593;
+    color: white;
+    padding: 20px 10px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.dashboard-header p {
+    font-size: 1rem;
+    margin: 5px 0 0;
+}
+
+.dashboard-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.kpi {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.kpi h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #283593;
+}
+
+.kpi p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0 15px;
+}
+
+.kpi .value {
+    font-size: 2rem;
+    color: #283593;
+    font-weight: bold;
+}
+
+.top3 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.top3 li {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #444;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #283593;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
