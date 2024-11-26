@@ -11,6 +11,7 @@ body {
     background-color: #283593;
     color: white;
     padding: 20px 10px;
+    width: 100%;
 }
 
 .dashboard-header h1 {
@@ -81,4 +82,21 @@ body {
     color: white;
     font-size: 0.9rem;
     margin-top: 20px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 450px; /* Altura ajustável */
+    width: 100%; /* Largura total */
+    margin: 20px 0; /* Margem superior e inferior */
+}
+
+canvas {
+    max-width: 80%; /* Ajusta o tamanho máximo do gráfico */
+    max-height: 100%; /* Ajusta a altura máxima */
 }

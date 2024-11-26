@@ -1,5 +1,4 @@
 CREATE DATABASE CCB;
-
 USE CCB;
 
 CREATE TABLE musico(
@@ -12,6 +11,17 @@ CREATE TABLE musico(
     CONSTRAINT fkMusicoEncarregado FOREIGN KEY (fkEncarregado)
 		REFERENCES musico (idMusico)
 );
+
+
+CREATE TABLE usuario (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(50),
+	email VARCHAR(50),
+	senha VARCHAR(50)
+);
+
+SELECT *FROM usuario;
+TRUNCATE usuario;
 
 ALTER TABLE musico DROP CONSTRAINT fkMusicoEncarregado;
 DROP TABLE musico;
