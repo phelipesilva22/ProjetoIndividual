@@ -1,115 +1,142 @@
+/* Reset padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Corpo da página */
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: #f5f5f5;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.login-card {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a8d92, #d1e8e4);
+  }
+  
+  /* Contêiner principal */
+  .container {
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 350px;
-}
-
-h2 {
-    color: #333;
-    margin-bottom: 15px;
+  }
+  
+  /* Cartão de cadastro */
+  .card {
     text-align: center;
-}
-
-.quote {
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2a5d67;
+  }
+  
+  .card .quote {
     font-style: italic;
-    color: #666;
-    text-align: center;
+    font-size: 20px;
+    color: #000000;
     margin-bottom: 20px;
-}
-
-
-
-.alerta_erro{
+  }
+  
+  .formulario {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .campo {
+    text-align: left;
+  }
+  
+  .campo span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .campo input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  
+  .campo input:focus {
+    border-color: #2a5d67;
+    outline: none;
+    box-shadow: 0 0 5px rgba(42, 93, 103, 0.2);
+  }
+  
+  /* Botão */
+  .botao {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a5d67;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .botao:hover {
+    background-color: #244d55;
+    transform: scale(1.04);
+  }
+  
+
+  /* Link */
+  .link {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  .link a {
+    color: #2a5d67;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Alerta de erro */
+  .alerta_erro {
+    display: none;
   }
   
   .card_erro {
-    display: none;
-    background-color: #fff;
-    color: black;
-    width: 230px;
-    position: fixed;
-    border-radius: 4px;
-    border: #ED145B 3px solid;
+    background-color: #ffdddd;
+    border: 1px solid #ff5c5c;
     padding: 10px;
-    margin-right: 10%;
+    border-radius: 8px;
+    color: #b30000;
+    text-align: center;
+    margin-bottom: 15px;
   }
   
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
-
-
-
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 8px;
-    color: #555;
-}
-
-input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    padding: 12px;
-    background-color: #3a7bd5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #2957a4;
-    transform: scale(1.09);
-}
-
-.link {
+  /* Div de carregamento */
+  .loading-div {
+    display: none;
+    margin-top: 15px;
     text-align: center;
-    margin-top: 10px;
-}
+  }
+  
+  .loading-div img {
+    width: 40px;
+    height: 40px;
+  }
+  
 
-.link a {
-    color: #3a7bd5;
-    text-decoration: none;
-}
 
-.link a:hover {
-    text-decoration: underline;
-}
+

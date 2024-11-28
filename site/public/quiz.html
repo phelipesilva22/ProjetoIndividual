@@ -7,24 +7,62 @@
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"/>
     <link rel="shortcut icon" href="assets/favicon/image.png" type="image/x-icon">
+    <script src="js/sessao.js"></script>
 </head>
 <body>
    
+    <div class="janela">
+        <div class="header-left">
+          <h1>Orquestra CCB</h1>
+    
+          <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+          </div>
+    
+          <div class="btn-nav">
+            <a href="quiz.html">
+                <h3>Quiz</h3>
+            </a>
+          </div>
+
+          <div class="btn-nav">
+            <a href="dashboard.html">
+                <h3>Dashboard</h3>
+            </a>
+          </div>
+    
+          <div class="btn-logout" onclick="voltar()">
+            <h3>Sair</h3>
+          </div>
+        </div>
+
+
     <div class="app">
-        <h1>Quiz CCB &#x1F3BB;  &#x1F3B7; &#x1F3BA;</h1>
-        <div class="quiz">
-            <h2 id="pergunta">Teste seus conhecimentos abaixo</h2>
+      <div id="inicio-container">
+        <h1>Quiz - Orquestra CCB </h1>
+        <h2>Clique abaixo para Iniciar o Quiz</h2>
+        <button id="comecar-btn" onclick="comecarQuiz()">Iniciar</button>
+      </div>
+      
+        <div id="quiz-container" style="display: none;">
+          <h1>Orquestra CCB &#x1F3BB;  &#x1F3B7; &#x1F3BA;</h1>  
+          <h2 id="pergunta">Teste seus conhecimentos abaixo</h2>
             <div id="resposta-botoes">
                 <button class="btn">Resposta 1</button>
                 <button class="btn">Resposta 2</button>
                 <button class="btn">Resposta 3</button>
                 <button class="btn">Resposta 4</button>
             </div>
-            <button id="proximo-btn">Próximo</button>
+            <button id="proximo-btn" style="display: none;">Próximo</button>
+        </div>
+
+        <div id="mensagem-final" style="display: none;">
+          <button id="dashboard-btn" style="display: none;">Ir para a Dashboard</button>
         </div>
     </div>
     
     
     <script src="js/quiz.js"></script>
+
 </body>
 </html>

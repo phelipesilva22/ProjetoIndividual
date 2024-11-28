@@ -4,14 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Orquestra CCB</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="../assets/favicon/image.png" type="image/x-icon">
 </head>
-<body>
+<body> 
+
     <header class="dashboard-header">
         <h1>Dashboard - Orquestra CCB</h1>
         <p>Visão geral dos resultados do quiz</p>
+        <div class="janela">
+            <div class="header-left">
+              <h1>Orquestra CCB</h1>
+        
+              <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+              </div>
+        
+              <div class="btn-nav">
+                <a href="quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+              </div>
+    
+              <div class="btn-nav">
+                <a href="dashboard.html">
+                    <h3>Dashboard</h3>
+                </a>
+              </div>
+        
+              <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+              </div>
+            </div>
+    
+
     </header>
     <main class="dashboard-main">
         <section class="kpis">
@@ -43,9 +70,9 @@
             <canvas id="myChart" style="width: 400vh;"></canvas>
           </div>
     </main>
-    <footer class="dashboard-footer">
+   <!--  <footer class="dashboard-footer">
         <p>Desenvolvido por Phelipe Bruione</p>
-    </footer>
+    </footer> -->
 </body>
 </html>
 

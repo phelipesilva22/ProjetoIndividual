@@ -101,16 +101,34 @@ const perguntas = [
     }
 ]
 
-
+const containerInicio = document.getElementById('inicio-container')
+const containerQuiz = document.getElementById('quiz-container')
 const perguntasQuiz = document.getElementById('pergunta')
 const respostasQuiz = document.getElementById('resposta-botoes')
 const botaoProximaPergunta = document.getElementById('proximo-btn')
+const mensagemFinal = document.getElementById('mensagem-final')
+const botaoDashboard = document.getElementById('dashboard-btn')
+
 
 let indicePerguntaAtual = 0
 let pontuacao = 0
 
+
+function mostrarTelaInicial()
+{
+    containerInicio.style.display = "block"
+    containerQuiz.style.display = "none"
+    mensagemFinal.style.display = "none"
+}
+
+
 function comecarQuiz()
 {
+    containerInicio.style.display = "none"
+    containerQuiz.style.display = "block"
+    mensagemFinal.style.display = "none"
+
+
     indicePerguntaAtual = 0
     pontuacao = 0
     botaoProximaPergunta.innerHTML = "Proximo"
@@ -171,7 +189,9 @@ function selecionarResposta(e)
 
 function mostrarPontuacao()
 {
-    esconderBotoesIniciais()
+    containerQuiz.style.display = 'none';
+    mensagemFinal.style.display = 'block';
+
     var mensagemPontuacao = ''
     if (pontuacao < 5)
     {
@@ -186,10 +206,13 @@ function mostrarPontuacao()
     {
         mensagemPontuacao = 'Gabaritou!! &#x1F4AA; &#x1F4AF;'
     }
-    perguntasQuiz.innerHTML = `Você acertou ${pontuacao} das ${perguntas.length} perguntas<br>
-    ${mensagemPontuacao}`
-    botaoProximaPergunta.innerHTML = "Jogar novamente"
-    botaoProximaPergunta.style.display = "block"
+    mensagemFinal.innerHTML = `
+    <h2>Você acertou ${pontuacao} das ${perguntas.length} perguntas</h2>
+    <p>${mensagemPontuacao}</p>
+`
+    botaoProximaPergunta.style.display = 'block';
+    botaoProximaPergunta.innerHTML = 'Jogar novamente'
+    
 }
 
 
@@ -216,4 +239,10 @@ botaoProximaPergunta.addEventListener("click", () =>{
     }
 })
 
-comecarQuiz()
+botaoDashboard.addEventListener("click", () => {
+    window.location.href = "dashboard.html"
+})
+
+
+
+mostrarTelaInicial()
