@@ -81,7 +81,7 @@ const perguntas = [
     },
     // --- Pergunta 9 do quiz ---
     {
-        pergunta: "Quem é o responsável pelo orquestra local?",
+        pergunta: "Quem é o responsável pela orquestra local?",
         respostas: [
             {texto: "Encarregado Regional", correta: false},
             {texto: "Ancião", correta: false},
@@ -91,7 +91,7 @@ const perguntas = [
     },
     // --- Pergunta 10 do quiz ---
     {
-        pergunta: "Quem é o responsável pelo orquestra regional?",
+        pergunta: "Quem é o responsável pela orquestra regional?",
         respostas: [
             {texto: "Ancião", correta: false},
             {texto: "Encarregado Regional", correta: true},

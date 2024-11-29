@@ -6,9 +6,10 @@
     <title>Dashboard - Orquestra CCB</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="shortcut icon" href="../assets/favicon/image.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon/image.png" type="image/x-icon">
+    <script src="js/sessao.js"></script>
 </head>
-<body> 
+<body onload="pontuacaoUsuario()"> 
 
     <header class="dashboard-header">
         <h1>Dashboard - Orquestra CCB</h1>
@@ -33,7 +34,7 @@
                 </a>
               </div>
         
-              <div class="btn-logout" onclick="limparSessao()">
+              <div class="btn-logout" onclick="voltar()">
                 <h3>Sair</h3>
               </div>
             </div>
@@ -79,15 +80,86 @@
 
 
 <script>
-    const ctx = document.getElementById('myChart').getContext('2d');
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
+    function pontuacaoUsuario()
+    {
+        var idUsuario = sessionStorage.ID_USUARIO
+
+        fetch(`/pontuacao/pontuacaoUsuario/${idUsuario} `, {
+            cache: "no-store"
+
+        })
+        .then(function (resposta) {
+            if (resposta.ok){
+                console.log(resposta)
+
+                resposta.json().then(json =>{
+                    let labels = []
+                    console.log(json)
+                    let dados = {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Acertos',
+                                data: [],
+                                fill: false,
+                                backgroundColor:[
+                                'rgba(127, 255, 212, 0.473)',
+                                ],
+                                borderColor: '#a783e082',
+                                tension: 0.1   
+                            },
+                            {
+                                label: 'Erros',
+                                data: [],
+                                fill: false,
+                                backgroundColor: [
+                                '#5763aca8',
+                                ],
+                                borderColor: '#5763ac',
+                                tension: 0.1
+                            }
+                        ]
+                    }
+
+                    for (var i = 0; i < json.length; i++){
+                        dados.datasets[0].data.push(registro.acerto)
+                        dados.datasets[1].data.push(registro.erros)
+                    }
+
+                    const config = {
+                        type: 'bar',
+                        data: dados,
+                    }
+                    
+                    let myChart = new Chart(
+                        document.getElementById("grafico"),
+                        config
+                    )
+
+
+                })
+            }  else {
+                console.log("Resposta não OK: ", resposta.status)
+            }
+        })
+        .catch(function (erro){
+            console.log("Erro na requisição: ", erro)
+        })
+
+        return false
+    }
+
+
+    const ctx = document.getElementById('myChart').getContext('2d');
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Erros', 'Acertos'],
             datasets: [{
-                label: 'Acertos de respostas',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Respostas',
+                data: [0, 10],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
