@@ -1,22 +1,18 @@
 var pontuacaoModel = require("../models/pontuacaoModel")
 
-function cadastrarPontos(req, res)
+function cadastrarPontuacao(req, res)
 {
-    var idUsuario = req.body.idUsuario
-    var acertos = req.body.acertos
-    var erros = req.body.erros
+    var pontuacao = req.body.pontuacaoServer 
+    var idUsuario = req.body.usuarioServer
 
     if (idUsuario == undefined)
     {
         res.status(400).send("ID DO USUÁRIO está undefined")
-    } else if (acertos == undefined)
+    } else if (pontuacao == undefined)
     {
-        res.status(400).send("OS ACERTOS estão undefined")
-    } else if (erros == undefined)
-    {
-        res.status(400).send("Os ERROS estão undefined!")
+        res.status(400).send("PONTUAÇÃO está undefined")
     } else {
-        pontuacaoModel.cadastrarPontos(idUsuario, acertos, erros)
+        pontuacaoModel.cadastrarPontuacao(pontuacao, idUsuario)
         .then(
             function (resultado) {
                 res.status(200).json({mensagem:
@@ -33,24 +29,8 @@ function cadastrarPontos(req, res)
     }
 }
 
-function pontuacaoUsuario(res, req){
-    var idUsuario = req.param.idUsuario
 
-    pontuacaoModel.pontuacaoUsuario(idUsuario)
-    
-    .then(
-        function (resultado) {
-            res.status(200).json(resultado)
-        }
-    )
-    .catch(
-        function (erro) {
-            res.status(500).json(erro.sqlMessage)
-        }
-    )
-}
 
 module.exports = {
-    cadastrarPontos,
-    pontuacaoUsuario
+    cadastrarPontuacao
 }

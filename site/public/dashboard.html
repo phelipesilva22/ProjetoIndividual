@@ -8,6 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="assets/favicon/image.png" type="image/x-icon">
     <script src="js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src=".js/dashboard.js"></script>
+
+
 </head>
 <body onload="pontuacaoUsuario()"> 
 
@@ -67,8 +71,18 @@
                 </ol>
             </div>
         </section>
-        <div class="chart-container">
-            <canvas id="myChart" style="width: 400vh;"></canvas>
+
+
+        <div class="graficos">
+            <div class="grafico1">
+                <h1>Ranking: 3 Maiores Pontuações</h1>  
+                <canvas id="chartJS" width="550px" height="350px"></canvas>
+            </div>
+            <div class="grafico2">
+                <h1>Percentual de Acertos</h1>
+                <canvas id="chartJS2" width="350px" height="350px">
+                </canvas>
+            </div>
           </div>
     </main>
    <!--  <footer class="dashboard-footer">
@@ -81,112 +95,5 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    
-    function pontuacaoUsuario()
-    {
-        var idUsuario = sessionStorage.ID_USUARIO
 
-        fetch(`/pontuacao/pontuacaoUsuario/${idUsuario} `, {
-            cache: "no-store"
-
-        })
-        .then(function (resposta) {
-            if (resposta.ok){
-                console.log(resposta)
-
-                resposta.json().then(json =>{
-                    let labels = []
-                    console.log(json)
-                    let dados = {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: 'Acertos',
-                                data: [],
-                                fill: false,
-                                backgroundColor:[
-                                'rgba(127, 255, 212, 0.473)',
-                                ],
-                                borderColor: '#a783e082',
-                                tension: 0.1   
-                            },
-                            {
-                                label: 'Erros',
-                                data: [],
-                                fill: false,
-                                backgroundColor: [
-                                '#5763aca8',
-                                ],
-                                borderColor: '#5763ac',
-                                tension: 0.1
-                            }
-                        ]
-                    }
-
-                    for (var i = 0; i < json.length; i++){
-                        dados.datasets[0].data.push(registro.acerto)
-                        dados.datasets[1].data.push(registro.erros)
-                    }
-
-                    const config = {
-                        type: 'bar',
-                        data: dados,
-                    }
-                    
-                    let myChart = new Chart(
-                        document.getElementById("grafico"),
-                        config
-                    )
-
-
-                })
-            }  else {
-                console.log("Resposta não OK: ", resposta.status)
-            }
-        })
-        .catch(function (erro){
-            console.log("Erro na requisição: ", erro)
-        })
-
-        return false
-    }
-
-
-    const ctx = document.getElementById('myChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Erros', 'Acertos'],
-            datasets: [{
-                label: 'Respostas',
-                data: [0, 10],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            maintainAspectRatio: false, // Permite ajuste do tamanho
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
 </script>

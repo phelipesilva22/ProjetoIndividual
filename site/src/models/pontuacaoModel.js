@@ -1,25 +1,17 @@
 var database = require("../database/config")
 
-function cadastrarPontos(idUsuario, acertos, erros)
+function cadastrarPontuacao(pontuacao, fkUsuario)
 {
-    var instrucaoSqlCadastrarPontos = `
-    INSERT INT quiz(acertos, erros, fkUsuario) VALUES
-    (${acertos}, ${erros}, ${idUsuario})`
+    var instrucaoSqlCadastrarPontuacao = `
+    INSERT INTO quiz (pontuacao, fkUsuario) VALUES
+    (${pontuacao}, ${fkUsuario})`
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSqlCadastrarPontos);
+    console.log("Executando a instrução SQL: \n" + instrucaoSqlCadastrarPontuacao);
 
-    database.executar(instrucaoSqlCadastrarPontos)
+    database.executar(instrucaoSqlCadastrarPontuacao)
 }
 
-function pontuacaoUsuario(idUsuario) {
-    var instrucaoSqlPontuacao = `SELECT idQuiz, acertos, erros, fkUsuario FROM quiz WHERE fkUsuario = ${idUsuario};`
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSqlPontuacao);
-
-    database.executar(instrucaoSqlPontuacao);
-}
 
 module.exports = {
-    cadastrarPontos,
-    pontuacaoUsuario
+    cadastrarPontuacao
 }

@@ -101,6 +101,8 @@ const perguntas = [
     }
 ]
 
+
+
 const containerInicio = document.getElementById('inicio-container')
 const containerQuiz = document.getElementById('quiz-container')
 const perguntasQuiz = document.getElementById('pergunta')
@@ -186,25 +188,11 @@ function selecionarResposta(e)
     botaoProximaPergunta.style.display = "block"
 }
 
-
 function mostrarPontuacao()
 {
     containerQuiz.style.display = 'none';
     mensagemFinal.style.display = 'block';
 
-    sessionStorage.setItem("quizPontuacao", pontuacao);
-
-    fetch("/pontuacao/cadastrarPontuacao", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pontuacaoServer: pontuacao,
-          usuarioServer: sessionStorage.ID_USUARIO
-        }),
-    })
-    
     var mensagemPontuacao = ''
     if (pontuacao < 5)
     {
@@ -220,9 +208,26 @@ function mostrarPontuacao()
         mensagemPontuacao = 'Gabaritou!! &#x1F4AA; &#x1F4AF;'
     }
 
-    mensagemFinal.innerHTML = `
-    <h2>Você acertou ${pontuacao} das ${perguntas.length} perguntas</h2>
-    <p>${mensagemPontuacao}</p>`
+
+    sessionStorage.setItem("quizPontuacao", pontuacao);
+
+      // Enviando o valor da nova input
+    fetch("/pontuacao/InserirPontuacao", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          pontuacaoServer: pontuacao,
+          idUsuarioServer: sessionStorage.ID_USUARIO
+        }),
+      })
+
+      mensagemFinal.innerHTML = `
+      <h2>Você acertou ${pontuacao} das ${perguntas.length} perguntas</h2>
+      <p>${mensagemPontuacao}</p>`
     
 }
 
@@ -256,3 +261,127 @@ botaoDashboard.addEventListener("click", () => {
 
 
 mostrarTelaInicial()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
+}
+
+function showQuestion() {
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNO = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNO + ". " + currentQuestion.
+    question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+    });
+}
+
+function resetState() {
+    nextButton.style.display = "none";
+    while(answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct == "true";
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        score++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+    Array.from(answerButtons.children).forEach(button => {
+        if(button.dataset.correct == "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
+}
+
+function showScore(){
+
+    resetState();
+    questionElement.innerHTML = `Sua pontuação foi de ${score} de ${questions.length}!`;
+    nextButton.innerHTML = "DASHBOARD";
+    nextButton.style.display = "block";
+
+    sessionStorage.setItem("quizScore", score);
+
+      // Enviando o valor da nova input
+    fetch("/pontuacao/InserirPontuacao", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          pontuacaoServer: score,
+          idUsuarioServer: sessionStorage.ID_USUARIO
+        }),
+      })
+
+}
+
+function handleNextButton(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", ()=>{
+    if(currentQuestionIndex < questions.length) {
+        handleNextButton();
+    } else {
+        window.location.href = "dashboard.html";
+    }
+})
+
+
+startQuiz();
+
+
+ */
