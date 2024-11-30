@@ -1,21 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
 body{
-    background: #001ed4;
+  background: #001ed4;
 }
+
+.janela {
+  display: flex;
+
+}
+
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 3px solid #06dbfc;
+  background-color: #001ed4;
+}
+.header-left h1 {
+  color: #32b9cd;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hello h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.btn-nav {
+  width: 40%;
+  color: white;
+  background-color: #5566d4;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white {
+  width: 40%;
+  background-color: white;
+  border: 3px solid #e6005a;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white h3 {
+padding: 0;
+margin: 0;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout {
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 80px;
+}
+
 
 .app{
     background: #fff;
     width: 100%;
     max-width: 600px;
-    margin: 200px auto 0;
+    margin: 300px auto 200px 700px;
     border-radius: 10px;
     padding: 30px;
 }
@@ -27,10 +113,12 @@ body{
     border-bottom: 1px solid #333;
     padding-bottom: 5px;
     text-align: center;
+padding-bottom: 3%;
+
 }
 
 .quiz{
-    padding: 20px 0;
+  padding: 20px 0;
 
 }
 
@@ -38,7 +126,7 @@ body{
     font-size: 20px;
     color: #001ed4;
     font-weight: 600;
-    padding-top: 15px;
+    padding-top: 5%;
 }
 
 .btn{
@@ -136,91 +224,5 @@ transform: scale(1.05);
 
 
 
-
-
-.janela {
-    display: flex;
- 
-}
-
-.header-left a {
-  text-decoration: none;
-  color: white;
-}
-  
-.header-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-right: 3px solid #06dbfc;
-  background-color: #001ed4;
-}
-.header-left h1 {
-    color: #32b9cd;
-}
-  
-.hello {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-.hello h3 {
-    color: #ffffff;
-    font-weight: 300;
-    font-size: 1.2rem;
-}
-  
-.hello h3 span {
-  font-weight: 800;
-}
-  
-.btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #5566d4;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-  
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-  
-.btn-nav-white h3 {
-  padding: 0;
-  margin: 0;
-}
-  
-.btn-nav h3,
-.btn-logout h3 {
-    margin: 0;
-    padding: 0;
-}
-  
-.btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 40%;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-}
 
 

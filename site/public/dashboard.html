@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Orquestra CCB</title>
+
+    <link rel="stylesheet" href="css/style_dashboard.css">
     <link rel="stylesheet" href="css/dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="assets/favicon/image.png" type="image/x-icon">
-    <script src="js/sessao.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <script src=".js/dashboard.js"></script>
-
-
+    <title>Dashboard - Orquestra CCB</title>
 </head>
-<body onload="pontuacaoUsuario()"> 
+<body>
 
     <header class="dashboard-header">
         <h1>Dashboard - Orquestra CCB</h1>
@@ -23,7 +19,7 @@
               <h1>Orquestra CCB</h1>
         
               <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Olá, <span id="b_usuario1">usuário</span>!</h3>
               </div>
         
               <div class="btn-nav">
@@ -44,56 +40,62 @@
             </div>
     
 
-    </header>
-    <main class="dashboard-main">
-        <section class="kpis">
-            <div class="kpi">
-                <h2>Pergunta com Maior Acerto</h2>
-                <p>Qual foi o objetivo da criação da orquestra?</p>
-                <span class="value">92%</span>
+    <div class="dashboard">
+        <div class="kpis">
+            <div class="kpi1">
+                <h2>
+                   Total de participantes
+                </h2>
+                <span id="total-usuarios">
+                    qtd aqui
+                </span>
             </div>
-            <div class="kpi">
-                <h2>Pontuação Média</h2>
-                <p>Desempenho geral dos participantes</p>
-                <span class="value">7.8 / 10</span>
+            <div class="kpi2">
+                <h2>
+                    Tentativas de <span id="b_usuario2">usuário</span>!</h3>
+                </h2>
+                <h3 id="qtd-tentativas">
+                    qtd aqui
+                </h3>
             </div>
-            <div class="kpi">
-                <h2>Total de Participantes</h2>
-                <p>Usuários que completaram o quiz</p>
-                <span class="value">45</span>
+            <div class="kpi3">
+                <h2>
+                    Média dos usuários
+                </h2>
+                <h3 id="pontuacao-atual">
+                    qtd aqui
+                </h3>
             </div>
-            <div class="kpi">
-                <h2>Top 3 Acertos</h2>
-                <ol class="top3">
-                    <li>1º - João Silva (10/10)</li>
-                    <li>2º - Maria Souza (9/10)</li>
-                    <li>3º - Carlos Lima (9/10)</li>
-                </ol>
-            </div>
-        </section>
-
-
+        </div>
+ 
+       
         <div class="graficos">
-            <div class="grafico1">
-                <h1>Ranking: 3 Maiores Pontuações</h1>  
-                <canvas id="chartJS" width="550px" height="350px"></canvas>
+            <div class="grafico-container">
+                <h2 class="grafico-title">Percentual de Acertos</h2>
+                <div class="grafico2">
+                    <canvas id="chartJS2" width="250px" height="250px"></canvas>
+                </div>
             </div>
-            <div class="grafico2">
-                <h1>Percentual de Acertos</h1>
-                <canvas id="chartJS2" width="350px" height="350px">
-                </canvas>
+            <div class="grafico-container">
+               
+                <h2 class="grafico-title"> 3 Maiores Pontuações</h2>
+                <div class="grafico1">
+                    <canvas id="chartJS" width="250px" height="250px"></canvas>
+                </div>
             </div>
-          </div>
-    </main>
-   <!--  <footer class="dashboard-footer">
-        <p>Desenvolvido por Phelipe Bruione</p>
-    </footer> -->
+        </div>
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/sessao.js"></script>
+
+    <script>
+        b_usuario1.innerHTML = sessionStorage.NOME_USUARIO;
+        b_usuario2.innerHTML = sessionStorage.NOME_USUARIO;
+      </script>
+
 </body>
 </html>
 
-
-
-<script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-</script>

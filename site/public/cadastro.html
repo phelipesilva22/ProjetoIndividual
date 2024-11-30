@@ -39,6 +39,12 @@
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" />
           </div>
+
+          <div class="campo">
+            <span>Confirmar senha:</span>
+            <input id="confirmar_senha_input" type="password" placeholder="******" />
+          </div>
+    
     
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
           <p class="link">Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
@@ -54,62 +60,38 @@
 
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Orquestra CCB</title>
-    <link rel="stylesheet" href="css/cadastro-login.css">
-    <link rel="shortcut icon" href="assets/favicon/image.png" type="image/x-icon">
-    <script src="./js/sessao.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-              <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="login-card">
-            <h2>Cadastre-se e conheça melhor a orquestra CCB</h2>
-            <form>
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="input_nome" placeholder="Digite seu nome" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="input_email" placeholder="Digite seu email" required>
-                
-                <label for="senha">Senha</label>
-                <input type="password" id="input_senha" placeholder="Crie uma senha" required>
-                
-                <button type="submit" onclick="cadastrar()">Cadastrar</button>
-                <p class="link">Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
-            </form>
-            <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif"/>
-            </div>
-      
-              <div id="div_erros_login"></div>
-            </div>
-        </div>
-    </div>
- -->
 
     <script>
       function cadastrar() {
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var confirmarSenhaVar = confirmar_senha_input.value;
     
-        if (nomeVar == "" || emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML =
-            "(Mensagem de erro para todos os campos em branco)";
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhaVar == "") {
+          alert("Preencha todos os campos!")
 
         finalizarAguardar();
         return false;
-        } else {
+        }  else if (nomeVar.length < 2)
+        {
+          alert ("Nome deve conter no mínimo 2 caracteres!!");
+          return false;
+        } else if (emailVar.indexOf('@') == -1)
+        {
+          alert("Email deve conter @!!");
+          return false;
+        } else if (senhaVar.length < 6)
+        {
+          alert("Senha deve conter mais de 6 dígitos!")
+          return false;
+        } else if (senhaVar != confirmarSenhaVar)
+        {
+          alert("Senhas não estão iguais!");
+          return false;
+        }
+        
+        else {
         setInterval(sumirMensagem, 5000);
         }
 
