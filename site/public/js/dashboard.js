@@ -1,7 +1,7 @@
 const pontuacaoQuiz = sessionStorage.getItem("quizPontuacao");
 
 /* const pontuacaoAtual = document.getElementById("pontuacao-atual"); */
-const mediaPontuacao = document.getElementById('pontuacao-atual');
+const mediaPontuacao = document.getElementById('media-usuario');
 const qtdTentativas = document.getElementById("qtd-tentativas");
 const totalUsuarios = document.getElementById("total-usuarios");
 
@@ -95,9 +95,115 @@ function buscarMediaPontuacao() {
         });
 }
 
-
-
 // Função para criar os gráficos
+function criarGraficos() {
+    const labels = [pessoaTop1, pessoaTop2, pessoaTop3];
+  
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Pontuação',
+                data: [pontuacaoPessoaTop1, pontuacaoPessoaTop2, pontuacaoPessoaTop3], 
+                backgroundColor: [
+                    "#ffd700" , 
+                    "#c0c0c0", 
+                    "#cd7f32"
+                ],
+                borderColor: [
+                    "#373a55", 
+                    "#555555", 
+                    "#373a55" 
+                ],
+                borderWidth: 1,
+            }
+        ],
+    };
+    
+    const config = {
+        type: "bar",
+        data: data,
+        options: {
+            plugins: {
+                legend: {
+                    display: false, 
+                    labels: {
+                        font: {
+                            size: 16 // Aumenta o tamanho da fonte da legenda
+                        }
+                    }
+                },
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false, 
+                    },
+                    ticks: {
+                        font: {
+                            size: 14 // Aumenta o tamanho da fonte dos rótulos no eixo X
+                        },
+                        color: '#000' // Cor dos rótulos no eixo X (opcional)
+                    },
+                    type: 'category', 
+                    labels: labels, 
+                },
+                y: {
+                    grid: {
+                        display: false, 
+                    },
+                    ticks: {
+                        font: {
+                            size: 18 
+                        },
+                        color: '#000000' 
+                    },
+                },
+            },
+        },
+    };
+    
+    // Criação do gráfico
+    const myChart = new Chart(document.getElementById("chartJS"), config);
+    
+  
+    const labels2 = ["Corretas", "Incorretas"];
+    const data2 = {
+        labels: labels2,
+        datasets: [
+            {
+                label: "Porcentagem",
+                data: [PorcentagemAcerto, PorcentagemErro],
+                backgroundColor: [
+                    "#008000",
+                    "#ff0000",
+                ],
+            },
+        ],
+    };
+  
+    const config2 = {
+        type: "pie",
+        data: data2,
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 20
+                        }
+                    }
+                }
+            }
+        },
+    };
+  
+    const myChart2 = new Chart(document.getElementById("chartJS2"), config2);
+  }
+  
+
+
+/* // Função para criar os gráficos
 function criarGraficos() {
   const labels = [pessoaTop1, pessoaTop2, pessoaTop3];
 
@@ -130,6 +236,9 @@ function criarGraficos() {
               legend: {
                   display: false, 
               },
+              labels: {
+                font: 20
+              }
           },
           scales: {
               x: {
@@ -174,7 +283,7 @@ function criarGraficos() {
     };
 
     const myChart2 = new Chart(document.getElementById("chartJS2"), config2);
-}
+} */
 
 // Aguarda todas as requisições serem concluídas
 Promise.all([buscarTentativas(), buscarTotalUsuarios(), buscarTop3Usuarios(), buscarMediaPontuacao()])

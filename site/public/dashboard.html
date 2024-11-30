@@ -62,7 +62,7 @@
                 <h2>
                     Média dos usuários
                 </h2>
-                <h3 id="pontuacao-atual">
+                <h3 id="media-usuario">
                     qtd aqui
                 </h3>
             </div>
@@ -71,16 +71,16 @@
        
         <div class="graficos">
             <div class="grafico-container">
-                <h2 class="grafico-title">Percentual de Acertos</h2>
+                <h2 class="grafico-title">Percentual último usuário</h2>
                 <div class="grafico2">
-                    <canvas id="chartJS2" width="250px" height="250px"></canvas>
+                    <canvas id="chartJS2" width="350px" height="350px"></canvas>
                 </div>
             </div>
             <div class="grafico-container">
                
                 <h2 class="grafico-title"> 3 Maiores Pontuações</h2>
                 <div class="grafico1">
-                    <canvas id="chartJS" width="250px" height="250px"></canvas>
+                    <canvas id="chartJS" width="350px" height="350px"></canvas>
                 </div>
             </div>
         </div>
@@ -94,6 +94,7 @@
     <script>
         b_usuario1.innerHTML = sessionStorage.NOME_USUARIO;
         b_usuario2.innerHTML = sessionStorage.NOME_USUARIO;
+        b_usuario3.innerHTML = sessionStorage.NOME_USUARIO;
       </script>
 
 </body>

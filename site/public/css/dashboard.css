@@ -22,7 +22,8 @@ body {
 }
 
 .dashboard-header p {
-  font-size: 1rem;
+  margin-top: 0;
+  font-size: 1.5rem;
   margin-left: 5px;
 }
 
@@ -33,22 +34,11 @@ body {
 }
 
 
-/* .dashboard {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  min-height: 100vh;
-  margin-left: 20%; 
-  padding: 20px;
-} */
-
 .dashboard{
   padding: 40px;
   max-width: 1200px;
   margin-left: 500px;
 }
-  
  
 .kpis {
   display: grid;
@@ -58,7 +48,7 @@ body {
 
 
 .kpi1, .kpi2, .kpi3 {
-  background: linear-gradient(135deg, #6a8d92, #d1e8e4);
+  background: #001ed4;
   color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -68,16 +58,27 @@ body {
   min-width: 200px; 
   font-size: 0.9rem;
   margin: 0;
+  transition: 0.5s ease;
 }
 
+.kpi1:hover{
+  transform: scale(1.08);
+}
 
-.kpi1 #total-usuarios, .kpi2 #qtd-tentativas, .kpi3 #pontuacao-atual{
+.kpi2:hover{
+  transform: scale(1.08);
+}
+
+.kpi3:hover{
+  transform: scale(1.08);
+}
+
+.kpi1 #total-usuarios, .kpi2 #qtd-tentativas, .kpi3 #media-usuario{
   font-size: 2rem;
-  color: #283593;
+  color: #ffffff;
   font-weight: bold;
   margin-bottom: 30px;
 }
-
 
 
 .graficos {
@@ -95,18 +96,29 @@ body {
   align-items: center;
   width: 48%; 
   min-width: 300px;
+
  
 }
 
 .grafico1, .grafico2 {
-  background: linear-gradient(135deg, #6a8d92, #d1e8e4);
+  background: #ffffff;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: 45%;
-  min-width: 300px;
+  min-width: 325px;
   margin: 10px;
+  padding-right: 10px;
+  transition: 0.5s ease;
+}
+
+.grafico1:hover{
+  transform: scale(1.08);
+}
+
+.grafico2:hover {
+  transform: scale(1.08);
 }
 
 .grafico-title {

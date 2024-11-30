@@ -53,20 +53,16 @@
     <script>
   
   function entrar() {
-        aguardar();
+    
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos!!";
-            finalizarAguardar();
+            alert("Preencha todos os campos!!");
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -116,9 +112,6 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
     </script>
 
 <!-- </body>
